@@ -7,11 +7,12 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseViewController {
     
     @IBOutlet weak var txtEmail : UITextField!
     @IBOutlet weak var txtPassword : UITextField!
     @IBOutlet weak var btnLogin : UIButton!
+    @IBOutlet weak var btnForgotPassword : UIButton!
     
     lazy var viewModel = LoginViewModel()
     
@@ -24,7 +25,9 @@ class LoginViewController: UIViewController {
         txtEmail.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         txtPassword.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         btnLogin.isEnabled = viewModel.validateEmailPassword(email: txtEmail.text, password: txtPassword.text)
-        viewModel.delegate = self
+        btnLogin.tintColor = globalAppConfig?.style.appThemeColor
+        btnForgotPassword.tintColor = globalAppConfig?.style.appThemeColor
+        viewModel.delegate = self        
     }
     
 }
@@ -40,19 +43,29 @@ extension LoginViewController{
     @IBAction func btnLoginClick(){
         if let email = txtEmail.text,
            let password = txtPassword.text {
-            self.view.endEditing()
+            self.view.endEditing(true)
             viewModel.doLogin(email: email, password: password)
         }
+    }
+    
+    @IBAction func btnForgotPasswordClick(){
+        
     }
 }
 
 //Mark:- Login callback method
 extension LoginViewController: LoginDelegate{
     func onLoginSuccess() {
-//        self.view.makeToast("This is a piece of toast")
+
     }
     
     func onLoginFail(message: String) {
-        
+        showAlert(title: message)
+    }
+    
+    func showAlert(title: String){
+        let alert = UIAlertController(title: "Error", message: title, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }

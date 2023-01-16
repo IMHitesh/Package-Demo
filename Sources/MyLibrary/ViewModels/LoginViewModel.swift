@@ -14,7 +14,7 @@ protocol LoginDelegate {
 
 class LoginViewModel{
     
-    weak var delegate: LoginDelegate?
+    var delegate: LoginDelegate?
     
     func doLogin(email: String, password: String){
         if email ==  "hitesh",

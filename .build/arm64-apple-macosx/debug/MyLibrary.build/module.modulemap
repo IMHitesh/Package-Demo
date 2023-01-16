@@ -1,0 +1,4 @@
+module MyLibrary {
+    header "/Users/hiteshsurani/Desktop/MyLibrary/.build/arm64-apple-macosx/debug/MyLibrary.build/MyLibrary-Swift.h"
+    requires objc
+}

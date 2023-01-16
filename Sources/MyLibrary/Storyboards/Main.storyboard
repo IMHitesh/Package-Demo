@@ -37,6 +37,9 @@
                                 <rect key="frame" x="250" y="264" width="140" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Forgot Password?"/>
+                                <connections>
+                                    <action selector="btnForgotPasswordClick" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lVT-BK-oal"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zui-HV-gh2">
                                 <rect key="frame" x="24" y="339" width="366" height="44"/>
@@ -69,6 +72,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="IDd-b4-qGa"/>
                     <connections>
+                        <outlet property="btnForgotPassword" destination="lLP-6b-15v" id="c1i-lw-Gwv"/>
                         <outlet property="btnLogin" destination="Zui-HV-gh2" id="ufR-U0-MBH"/>
                         <outlet property="txtEmail" destination="9F9-r5-Tn4" id="haQ-Bc-91s"/>
                         <outlet property="txtPassword" destination="Bxg-bn-C1e" id="Xbw-Vh-Zj7"/>

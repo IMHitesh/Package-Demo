@@ -1,0 +1,4 @@
+module FASwiftUI {
+    header "/Users/hiteshsurani/Desktop/MyLibrary/.build/arm64-apple-macosx/debug/FASwiftUI.build/FASwiftUI-Swift.h"
+    requires objc
+}

@@ -1,0 +1,4 @@
+module QGrid {
+    header "/Users/hiteshsurani/Desktop/MyLibrary/.build/arm64-apple-macosx/debug/QGrid.build/QGrid-Swift.h"
+    requires objc
+}

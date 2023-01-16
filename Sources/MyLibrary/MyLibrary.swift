@@ -1,24 +1,12 @@
 import UIKit
 
-public enum Env {
-    case development, stagging, production
-}
-
-public class AppConfig {
-    let apiEndPoint: String?
-    var env: Env?
-    
-    public init(apiEndPoint: String, env: Env = Env.development) {
-        self.apiEndPoint = apiEndPoint
-        self.env = env
-    }
-}
-
+var globalAppConfig: AppConfig?
 public class MyLibrary {
     let appConfig: AppConfig
     
     public init(appConfig: AppConfig) {
         self.appConfig = appConfig
+        globalAppConfig = appConfig
     }
 
     public func initApp() -> UIViewController{
