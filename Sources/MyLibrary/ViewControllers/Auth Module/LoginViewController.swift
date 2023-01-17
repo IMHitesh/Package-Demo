@@ -60,12 +60,6 @@ extension LoginViewController: LoginDelegate{
     }
     
     func onLoginFail(message: String) {
-        showAlert(title: message)
-    }
-    
-    func showAlert(title: String){
-        let alert = UIAlertController(title: "Error", message: title, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        showAlert(title: "Error", subTitle: message)
     }
 }
